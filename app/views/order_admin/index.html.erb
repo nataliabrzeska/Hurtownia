@@ -17,8 +17,8 @@
 
 <% @order.each do |order| %>
   <tr>
-<!--    <td><%#= order.product.name %></td>-->
-<!--    <td><%#= order.product.price %> zł</td>-->
+    <td><%= order.product.name %></td>
+    <td><%= order.product.price %> zł</td>
     <td><%= order.quantity %> szt.</td> 
     <td><%= order.name + " " + order.lastName %></td> 
     <td><%= order.address %></td>

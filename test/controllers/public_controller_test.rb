@@ -7,7 +7,7 @@ class PublicControllerTest < ActionController::TestCase
   end
 
   test "should get product" do
-    get :product
+    get :product, :id => 1
     assert_response :success
   end
 

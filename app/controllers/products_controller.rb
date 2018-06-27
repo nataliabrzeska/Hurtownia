@@ -6,12 +6,12 @@ class ProductsController < ApplicationController
     @produkt = Product.sortuj
   end
 
-  def new
+  def nowy
     @produkt = Product.new
     @kategoria = Category.order('Name ASC')
   end
 
-  def add
+  def dodaj
     @produkt = Product.new(produkty_parametr)
     if @produkt.save
       flash[:notice] = "Produkt został pomyśle dodany"
@@ -23,16 +23,16 @@ class ProductsController < ApplicationController
     end
   end
 
-  def show
+  def pokaz
     @produkt = Product.find(params[:id])
   end
 
-  def edit
+  def edytuj
     @produkt = Product.find(params[:id])
 
   end
 
-  def update
+  def aktualizuj
     @produkt = Product.find(params[:id])
     if @produkt.update_attributes(produkty_parametr)
       flash[:notice] = "Produkt został pomyśle zaaktualizowany"
@@ -43,11 +43,11 @@ class ProductsController < ApplicationController
     end
   end
 
-  def delete
+  def usun
     @produkt = Product.find(params[:id])
   end
 
-  def remove
+  def kasuj
     produkt = Product.find(params[:id]).destroy
     flash[:notice] = "Produkt został pomyśle usunięty"
     redirect_to(:action => "index")
@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def product_parametr
+  def produkty_parametr
     params.require(:produkt).permit(:name, :price, :category_id, :description, :picture, :created_at)
 
   end

@@ -7,7 +7,6 @@
 kat:
   id: 1
   name: 'kategoria_pierwsza'
-
 kat_dru:
   id: 2
   name: 'kategoria_druga'

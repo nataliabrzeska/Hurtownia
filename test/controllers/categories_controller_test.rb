@@ -1,29 +1,27 @@
 require 'test_helper'
+require 'categories_controller'
+
+# Re-raise errors caught by the controller.
+class CategoriesController
+  def rescue_action(e)
+    raise e
+  end
+end
 
 class CategoriesControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
+  fixtures :categories
+
+  def setup
+    @controller = CategoriesController.new
+    @request = ActionController::TestRequest.new
+    @response = ActionController::TestResponse.new
+  end
+
+  def test_edycja
+    get :edycja, :id => 1
+    # assert_not_nil assigns(:kategoria)
     assert_response :success
   end
 
-  test "should get pokaz" do
-    get :pokaz
-    assert_response :success
-  end
-
-  test "should get nowa" do
-    get :nowa
-    assert_response :success
-  end
-
-  test "should get edycja" do
-    get :edycja
-    assert_response :success
-  end
-
-  test "should get usun" do
-    get :usun
-    assert_response :success
-  end
 
 end
