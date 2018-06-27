@@ -1,0 +1,59 @@
+
+<!-- Góra strony koniec -->
+
+<div class="container marketing">
+
+
+		
+<table>
+<tr>
+<th> Nazwa </th>
+<td> <%= @product.name %> </td>
+</tr>
+
+<tr>
+<th> Kategoria </th>
+<td> <%= @product.category.name %> </td>
+</tr>
+
+<tr>
+<th> Opis </th>
+<td> <%= @product.description %> </td>
+</tr>
+
+<tr>
+<th> Cena </th>
+<td> <%= @product.price %> </td>
+</tr>
+
+  <tr>
+    <th>Zdjecie</th>
+    <td><%= image_tag(@product.picture) %></td>
+  </tr>
+
+<tr>
+<th> Utworzono </th>
+<td> <%= @product.created_at%> </td>
+</tr>
+
+<tr>
+<th> Aktualizacja </th>
+<td> <%= @product.updated_at %> </td>
+</tr>
+
+
+
+</table>
+
+
+		
+<th>
+  	   
+  	    </div>
+  	</div>
+  <!-- Trzy kolumny zdjęcia + opis + linki koniec -->
+
+  <!-- Galerie poczatek -->
+
+  <!-- Galerie koniec -->
+</div>

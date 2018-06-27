@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+
+        <!-- Trzy kolumny zdjęcia + opis + linki początek -->
+        <div id="row">
+          <% @product.each do |product| %>
+            <div class="col-xs-6 col-md-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    <p> <%= product.name %> </p>
+                  </h3>
+                </div>
+                <table>
+                  <div class="col-xs-3 col-md-3">
+                    </br>
+                    <%= image_tag(product.picture, :size => "100x100") %>
+                    <tr>
+                      <td><%= product.description %></td>
+                    </tr>
+                    <tr>
+                      <td> Cena szt.: <%= product.price %> zł</td>
+                    </tr>
+                  </div>
+                </table>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

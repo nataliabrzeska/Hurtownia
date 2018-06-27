@@ -1,0 +1,44 @@
+  
+<div class="navbar-wrapper">
+  <div class="container">
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+
+             <a class="navbar-brand logo"></a>
+          </div>
+
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/public">Home</a></li>
+              <li><a href="/public/nowosci">Nowości</a></li>
+              <li><a href="/public/nowosci">o Nas</a></li>
+              <li><a href="/public/nowosci">Kontakt</a></li>
+                  
+               <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kategorie<b class="caret"></b></a>
+              <ul class="dropdown-menu">   
+                <% kategoria_menu   = Category.sortuj %>
+                    
+                    <% kategoria_menu.each do |category| %>
+                             <li><%= link_to(category.name, {:action => 'category', :category_id => category.id}) %></li>   
+                    <% end %>
+                  
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+

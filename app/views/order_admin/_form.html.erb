@@ -1,0 +1,31 @@
+<div class="hero-unit">
+
+<table class="table table-striped">
+<tr>
+  <th> <%= pole.label(:name, "Produkt") %> </th>
+  <td> <%= pole.label(:name) %> </td>
+</tr>
+<tr>
+  <th> <%= pole.label(:address, "Adres") %> </th>
+  <td> <%= pole.text_field(:address,:class => 'form-control') %> </td>
+</tr>
+<tr>
+  <th> <%= pole.label(:telephone, "Telefon") %> </th>
+  <td> <%= pole.text_field(:telephone,:class => 'form-control') %> </td>
+</tr>
+<tr>
+  <th> <%= pole.label(:status, "Status zamówienia") %> </th>
+  <td> <%= pole.select(:status,options_for_select([["W realizacji","W realizacji"], ["Zrealizowane","Zrealizowane"]])) %>
+  </td>
+</tr>
+</table>
+</div>
+
+
+
+
+
+
+ 
+
+

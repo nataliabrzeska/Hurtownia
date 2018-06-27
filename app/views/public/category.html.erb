@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+      <% @category.products.in_groups_of(2, false).each do |group| %>
+        <div class="row">
+          <% group.each do |product| %>
+          <%= form_for(:k, :url => {:action => 'order'}) do |pole| %>
+          <div class="col-xs-6 col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+              </span><%= product.name %></h3>
+            </div>
+            <table>       
+              <div class="col-xs-3 col-md-3">
+              </br>
+              <%= image_tag(product.picture, :size => "100x100") %>
+              <%= pole.hidden_field :idd, value: product.id %>
+              <tr>
+                <td><%= product.description %></td>
+              </tr>
+              <tr>
+                <td> <strong> Cena szt.: <%= product.price %> zł </strong></td>
+              </tr>
+              <tr> 
+                <td> <strong> Ilość sztuk: 
+                  <%= pole.select(:qq, options_for_select([[5,5],[10,10],[50,50],[100,100],[500,500]]))%> szt. </strong>
+                </td>
+              </tr>
+              <tr>
+                <td></br> <%= submit_tag("Zamów",:class => 'btn btn-primary') %> </td>
+              </tr>
+              </div>
+            </table>
+          </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

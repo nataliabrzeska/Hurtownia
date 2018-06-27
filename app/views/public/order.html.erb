@@ -1,0 +1,78 @@
+<h1> <strong>  FORMULARZ ZAKUPU  </strong> </h1>
+
+  <%= form_for(:orderr, :url => {:action => 'addOrder'}) do |pole| %>
+<h2> Zamówienie: </h2>
+
+
+  <table class="table table-striped">
+
+  <tr>
+      <th>Produkt</th>
+      <td><%= @product.name %>
+      <%= pole.hidden_field :idd, value: @product.id %>
+      </td>
+    </tr>
+
+   <tr>
+      <th>Opis produktu</th>
+      <td><%= @product.description %></td>
+    </tr>
+
+
+    <tr>
+      <th>Ilość sztuk</th>
+      <td><%= @quantity %>
+        <%= pole.hidden_field :qq, value: @quantity %> szt.
+      </td>
+    </tr>
+
+    <tr>
+      <th></th>
+      <td> <%= image_tag(@product.picture.url(:thumb)) %> </td>
+    </tr>
+
+    <tr>
+      <th>Cena</th>
+      <td><%= @result %> zł</td> 
+    </tr>
+ </table>
+
+  
+  <h2> Dane kupującego </h2>
+  <table class="table table-striped">
+    <tr>
+      <th> <%= pole.label(:Imie) %> </th>
+      <td><%= pole.text_field(:name) %> </td>
+    </tr>
+
+    <tr>
+      <th> <%= pole.label(:Nazwisko) %> </th>
+      <td><%= pole.text_field(:lastName ) %> </td>
+    </tr>
+
+    <tr>
+      <th> <%= pole.label(:Adres) %> </th>
+      <td><%= pole.text_field(:address) %> </td>
+    </tr>
+
+    <tr>
+      <th> <%= pole.label(:Email) %> </th>
+      <td><%= pole.text_field(:email) %> </td>
+    </tr>
+
+    <tr>
+      <th> <%= pole.label(:Telefon) %> </th>
+      <td><%= pole.text_field(:telephone) %> </td>
+    </tr>
+  
+ </table>
+
+ <div style="text-align: center;">
+      <%= link_to("Powrót do strony głównej", {:action => 'index'}, :class => 'btn btn-warning')%>
+      <%= submit_tag("Złóż zamówienie", :class => 'btn btn-warning') %>
+
+    </div>
+
+  <% end %>
+
+

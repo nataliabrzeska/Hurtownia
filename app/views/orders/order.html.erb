@@ -1,0 +1,68 @@
+
+
+
+
+<h1> FORMULARZ ZAKUPU </h1>
+
+<%= link_to("Powró do strony głównej", {:action => 'index'})%>
+
+<%= form_for(:order1, :url => {:action => 'addOrder'}) do |pole| %>
+
+  
+
+  <table>
+  <h2> Dane kupującego </h2>
+  <tr>
+  <th> <%= pole.label(:Imię) %> </th>
+  <td><%= pole.text_field(:Name) %> </th>
+</tr>
+
+  <tr>
+  <th> <%= pole.label(:Nazwisko) %> </th>
+  <td><%= pole.text_field(:LastName) %> </th>
+</tr>
+
+<tr>
+  <th> <%= pole.label(:Adres) %> </th>
+  <td><%= pole.text_field(:Address) %> </th>
+</tr>
+
+<tr>
+  <th> <%= pole.label(:Email) %> </th>
+  <td><%= pole.text_field(:Email) %> </th>
+</tr>
+
+<tr>
+  <th> <%= pole.label(:Telefon) %> </th>
+  <td><%= pole.text_field(:Telephone) %> </th>
+</tr>
+
+
+
+<div style="text-align: center;">
+  <%= link_to("Powrót do strony głównej", {:action => 'index'}, :class => 'btn btn-warning')%>
+  <%= link_to("Złóż zamówienie", {:action => 'addOrder'}, :class => 'btn btn-warning')%>
+</div>
+
+</table>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+		
+
+  	   
+  	
+  <!-- Trzy kolumny zdjęcia + opis + linki koniec -->
+
+  <!-- Galerie poczatek -->
+
+  <!-- Galerie koniec -->

@@ -1,0 +1,28 @@
+<div class="hero-unit">
+<h1>Pokaż kategorię </h1>
+
+<table class="table table-striped">
+<tr>
+<th> Nazwa </th>
+<td> <%= @kategoria.name %> </td>
+</tr>
+
+
+<tr>
+<th> Utworzono </th>
+<td> <%= @kategoria.created_at%> </td>
+</tr>
+
+<tr>
+<th> Aktualizacja </th>
+<td> <%= @kategoria.updated_at %> </td>
+</tr>
+
+</table>
+
+<div style="text-align: center;">
+  <%= link_to("Powrót", {:action => 'index'},:class => 'btn btn-primary')%>
+</div>
+</div>
+
+

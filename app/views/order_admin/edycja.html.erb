@@ -1,0 +1,14 @@
+<div class="hero-unit">
+<h1>Edycja zamówienia</h1>
+
+
+<%= form_for(:order, :url => {:action => 'aktualizuj', :id => @order.id}) do |pole| %>
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+   <div style="text-align: center;">
+  <%= link_to("Powrót", {:action => 'index'},:class => 'btn btn-warning') %>
+    <%= submit_tag("Aktualizuj", :class => 'btn btn-primary') %>
+  </div>
+
+<% end %>
+</div>

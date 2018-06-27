@@ -1,0 +1,38 @@
+<%= blad(@produkt) %>
+
+<table class="table table-striped">
+
+<tr>
+  <th> <%= pole.label(:name, "Nazwa") %> </th>
+  <td> <%= pole.text_field(:name,:class => 'form-control') %> </td>
+</tr>
+
+<tr>
+  <th> <%= pole.label(:category_id, "Kategoria") %> </th>
+  <td><%= pole.select(:category_id, @category = Category.all.map{ |c| [c.name, c.id] }, :class => 'form-control') %></td>
+</tr>
+
+<tr>
+  <th> <%= pole.label(:description, "Opis") %> </th>
+  <td> <%= pole.text_area(:description, :class => 'form-control') %> </td>
+</tr>
+
+<tr>
+  <th> <%= pole.label(:price, "Cena") %></th>
+  <td> <%= pole.text_field(:price, :class => 'form-control') %> </td>
+</tr>
+
+<% if !@produkt.picture.blank? %>
+
+<tr>
+  <th>Zdjecie</th>
+  <td><%= image_tag(@produkt.picture) %></td>
+</tr>
+<% end %>
+
+<tr>
+  <th> <%= pole.label(:picture, "Zdjecie") %> </th>
+  <td> <%= pole.file_field(:picture) %> </td>
+</tr>
+</table>
+

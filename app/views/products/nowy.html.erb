@@ -1,0 +1,20 @@
+<div class="hero-unit">
+<h1>Nowy Produkt</h1>
+
+
+<%= form_for(:produkt, :url => {:action => 'dodaj'}) do |pole| %>
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+
+<div style="text-align: center;">
+  <%= link_to("Powrót", {:action => 'pokaz'}, :class => 'btn btn-warning')%>
+<%= submit_tag("Dodaj",:class => 'btn btn-primary') %>
+</div>
+
+
+	<% end %>
+
+</div>
+
+
+

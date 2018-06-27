@@ -1,0 +1,26 @@
+<div class="hero-unit">
+<h1>Usunięcie konta użytkownika</h1>
+
+<%= form_for(:user, :url => {:action => 'kasuj', :id => @user.id}) do |pole| %>
+
+<div class="alert alert-danger" role="alert">
+	<p> Czy na pewno usunać konto użytkownika?  </p>
+</div>
+
+<table class="table table-striped">
+<tr>
+<th> Użytkownik </th>
+<td> <%= @user.firstName + " " + @user.lastName %> </td>
+</tr>
+</table>
+
+
+
+<div style="text-align: center;">
+<%= link_to("Powrót", {:action =>'index'}, :class => 'btn btn-primary')%>
+<%= submit_tag("Usuń",:class => 'btn btn btn-danger') %>
+</div>
+
+
+	<% end %>
+	</div>

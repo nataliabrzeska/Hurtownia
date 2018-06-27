@@ -1,0 +1,42 @@
+
+<h1>Zamówienie</h1>
+
+<table class="table table-striped">
+<tr class="info">
+<th> Produkt  </th>
+<th> Cena </th>
+<th> Ilość </th>
+<th> Imię Nazwisko </th>
+<th> Adres </th>
+<th> Telefon </th>
+<th> Email </th>
+<th> Status zamówienia </th>
+<th> Akcja </th>
+</tr>
+
+
+<% @order.each do |order| %>
+  <tr>
+<!--    <td><%#= order.product.name %></td>-->
+<!--    <td><%#= order.product.price %> zł</td>-->
+    <td><%= order.quantity %> szt.</td> 
+    <td><%= order.name + " " + order.lastName %></td> 
+    <td><%= order.address %></td>
+    <td><%= order.telephone %></td>  
+    <td><%= order.email %></td> 
+    <td><%= order.status %></td> 
+    
+<th>
+    
+ <%= link_to("Edycja",{:action => 'edycja', :id => order.id}, :class => 'btn btn-xs btn-primary')%>   
+</th>
+
+    
+  
+</th>
+</tr>
+<% end %>
+</table>
+</div>
+
+
